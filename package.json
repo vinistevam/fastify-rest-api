@@ -1,0 +1,36 @@
+{
+  "name": "fastify-rest-api",
+  "version": "1.0.0",
+  "description": "Boilerplate project for an REST API with Fastify Framework ",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinistevam/fastify-rest-api.git"
+  },
+  "keywords": [
+    "fastify",
+    "node",
+    "jest",
+    "javascript"
+  ],
+  "author": "Vinicius Stevam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinistevam/fastify-rest-api/issues"
+  },
+  "homepage": "https://github.com/vinistevam/fastify-rest-api#readme",
+  "dependencies": {
+    "fastify": "^2.7.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.8.0",
+    "supertest": "^4.0.2"
+  }
+}
