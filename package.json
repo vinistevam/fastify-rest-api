@@ -4,7 +4,7 @@
   "description": "Boilerplate project for an REST API with Fastify Framework ",
   "main": "app.js",
   "scripts": {
-    "test": "jest --detectOpenHandles"
+    "test": "jest --forceExit --detectOpenHandles "
   },
   "repository": {
     "type": "git",
