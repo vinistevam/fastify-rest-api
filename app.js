@@ -1,16 +1,15 @@
-const fastify = require('fastify')({
-  logger: true,
-});
+const app = require('fastify')();
+const logger = require('./config/winston');
 
-fastify.register(require('./routes/healthcheck'));
+app.register(require('./routes/healthcheck'));
 
-fastify.listen(3000, (err, address) => {
+app.listen(3000, (err, address) => {
   if (err) {
-    fastify.log.error(err);
+    logger.error(err);
     process.exit(1);
   }
-  fastify.log.info(`server listening on ${address}`);
+  logger.info(`server listening on ${address}`);
 });
 
 
-module.exports = fastify;
+module.exports = app;
