@@ -28,7 +28,7 @@ const logFormat = winston.format.combine(
 const logger = winston.createLogger({
   transports: [
     new winston.transports.Console({ format: logFormat, options: options.console }),
-    // new winston.transports.File(options.file), // FIXME
+    // new winston.transports.File(options.file), // Uncomment to have file logs enabled
   ],
 });
 
