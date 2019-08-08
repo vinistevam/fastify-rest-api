@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "ca6c40cf-a556-4b64-9c3d-11f57e2b7353",
+		"name": "Boilerplace Rest API",
+		"description": "Boilerplate Rest API using Fastify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Healthcheck",
+			"item": [
+				{
+					"name": "Healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/healthcheck",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"healthcheck"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Check the Healthcheck of the API "
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6ca0a6a8-16d0-4d8d-8459-afadb507276c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "55be27d5-27b1-4c5b-91bc-a111668013be",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

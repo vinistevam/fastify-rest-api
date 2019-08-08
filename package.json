@@ -4,7 +4,8 @@
   "description": "Boilerplate project for an REST API with Fastify Framework ",
   "main": "app.js",
   "scripts": {
-    "test": "jest --forceExit --detectOpenHandles "
+    "test": "jest --forceExit --detectOpenHandles ",
+    "newman": "node config/newman.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/vinistevam/fastify-rest-api#readme",
   "dependencies": {
     "fastify": "^2.7.1",
+    "newman": "^4.5.3",
     "winston": "^3.2.1"
   },
   "devDependencies": {
