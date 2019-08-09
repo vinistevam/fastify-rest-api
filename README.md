@@ -117,7 +117,7 @@ docker run -p 3000:3000 fastify-rest-api
 ```
 
 
-## Structure Proposed
+## Directory Structure Proposed
 [Structure of a NodeJs API Project](https://medium.com/codebase/structure-of-a-nodejs-api-project-cdecb46ef3f8)
 ```sh
 .
