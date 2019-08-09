@@ -1,8 +1,10 @@
 const app = require('./app');
 const logger = require('./config/winston');
 
+require('dotenv').config();
+
 // Run the server
-app.listen(3000, (err, address) => {
+app.listen(process.env.PORT, (err, address) => {
   if (err) {
     logger.error(err);
     process.exit(1);
