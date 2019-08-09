@@ -1,7 +1,4 @@
-FROM node:8.9.2
-
-# Update & install required packages
-RUN apk add --update nodejs bash git
+FROM node:12.0.0
 
 # Install app dependencies
 COPY package.json /www/package.json
@@ -20,4 +17,4 @@ ENV PORT 3000
 EXPOSE  3000
 
 # start command as per package.json
-CMD ["node app.js", "test"]
+CMD ["npm", "start"]

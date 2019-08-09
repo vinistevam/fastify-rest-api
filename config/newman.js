@@ -8,10 +8,10 @@ const env = fs.readFileSync(`${appRoot}/postman/environment/local.json`);
 const options = {
   collection: JSON.parse(collections), // FIXME - add from Postman URL
   environment: JSON.parse(env), // FIXME - add from Postman URL
-  reporters: 'cli',
+  reporters: 'cli'
 };
 
-newman.run(options, (err) => {
+newman.run(options, err => {
   if (err) {
     throw new Error(`Config newman: ${err.message}`);
   }
