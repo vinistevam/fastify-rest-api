@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --forceExit --detectOpenHandles ",
+    "testCoverage": "jest --forceExit --detectOpenHandles --collectCoverage",
     "newman": "node config/newman.js"
   },
   "repository": {

@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ca6c40cf-a556-4b64-9c3d-11f57e2b7353",
-		"name": "Boilerplace Rest API",
+		"name": "Boilerplate Rest API",
 		"description": "Boilerplate Rest API using Fastify",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
