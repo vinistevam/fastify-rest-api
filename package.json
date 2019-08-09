@@ -29,6 +29,8 @@
     "fastify": "^2.7.1",
     "fastify-autoload": "^1.0.0",
     "newman": "^4.5.3",
+    "sequelize": "^5.13.0",
+    "sqlite3": "^4.0.9",
     "winston": "^3.2.1"
   },
   "devDependencies": {
