@@ -2,14 +2,14 @@
 The aim of this project is to have a simple and adaptable REST API Boilerplate.
 
 ## Overview
-This is a straightforward boilerplate application for building REST APIs in Node.js using Fastify with Code Coverage. Helps you stay productive by following best practices. Follows [Airbnb's Javascript style guide](https://github.com/airbnb/javascript).
+This is a straightforward boilerplate application for building REST APIs in Node.js using Fastify with Code Coverage. Helps you stay productive by following best practices.
 
-### Stack Tech / Features
+### Features / Tech Stack
 
 - [Fastify](https://github.com/fastify/fastify/): Fastify is a web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. It is inspired by Hapi and Express and as far as we know, it is one of the fastest web frameworks in town.
 - [Winston](https://github.com/winstonjs/winston): as a logger for the API.
 - [Newman](https://github.com/postmanlabs/newman): as a manager for the postman collections. It allows you to effortlessly run and test a Postman collection directly from the command-line.
-- [Sequalize](https://github.com/sequelize/sequelize): Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
+- [Sequelize](https://github.com/sequelize/sequelize): Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 - [Jest](https://jestjs.io/docs/en/getting-started) + [supertest](https://github.com/visionmedia/supertest): Powerfull combination to testing node.js HTTP servers.
 - [ESLint](http://eslint.org): JavaScript code linting is done using [ESLint](http://eslint.org) a pluggable linter tool for identifying and reporting on patterns in JavaScript. Uses ESLint with [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb), which tries to follow the Airbnb JavaScript style guide.                                                                                                |
 - [npm](https://www.npmjs.com/): Uses npm as package manager.
@@ -43,10 +43,10 @@ Open your browser at http://localhost:3000
 npm test
 
 # Run test along with code coverage
-npm run testCoverage
+npm run coverage
 
 ```
-`npm run testCoverage` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
+`npm run coverage` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
 
 ### Newman testing Postman Collections:
 ```sh
@@ -122,7 +122,7 @@ docker run -p 3000:3000 fastify-rest-api
 ```sh
 .
 ├── config                  # App configuration files
-│   ├── sequalize.json        # Sequalize config
+│   ├── sequelize.json        # Sequelize config
 │   ├── serviceOne.js       # ServiceOne config
 │   └── ...                 # Other configurations
 ├── routes                  
@@ -133,11 +133,11 @@ docker run -p 3000:3000 fastify-rest-api
 │   ├── serviceOne
 │   └── serviceTwo
 │   └── ...                 # Other services
-├── db                      # Data access stuff  (Sequalize mostly)
+├── db                      # Data access stuff  (Sequelize mostly)
 │   ├── models              # Models
 │   ├── migrations          # Migrations
 │   ├── seeds               # Seeds
-│   └── index.js            # Sequalize instantiation
+│   └── index.js            # Sequelize instantiation
 ├── core                    # Business logic implementation
 │   ├── accounts.js         
 │   ├── sales.js            
@@ -148,6 +148,7 @@ docker run -p 3000:3000 fastify-rest-api
 ├── scripts                 # Standalone scripts for dev uses
 ├── package.json           
 ├── README.md         
+├── index.js                # Start script including `listen()`
 └── app.js                  # App starting point
 ```
 ## A Boilerplate-only Option
@@ -158,5 +159,4 @@ If you would prefer not to use any of our tooling, delete the following files fr
 
 ### Contributing
 
-Contributions, questions and comments are all welcome and encouraged. For code contributions submit a pull request with unit test.
-
+Contributions, questions and comments are all welcome and encouraged. For code contributions submit a pull request with appropriate test coverage.
