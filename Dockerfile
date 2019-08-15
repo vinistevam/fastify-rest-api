@@ -1,20 +1,17 @@
-FROM node:12.0.0
+FROM node:12
 
-# Install app dependencies
-COPY package.json /www/package.json
-RUN cd /www; npm install
+# Create app directory
+WORKDIR /usr/src/app
 
-# Copy app source
-COPY . /www
+# Install app dependencies, include lockfile
+COPY package*.json ./
 
-# Set work directory to /www
-WORKDIR /www
+RUN npm install
 
-# set your port
+# Bundle app source
+COPY . .
+
+EXPOSE 3000
 ENV PORT 3000
 
-# expose the port to outside world
-EXPOSE  3000
-
-# start command as per package.json
-CMD ["npm", "start"]
+CMD [ "npm", "start" ]
