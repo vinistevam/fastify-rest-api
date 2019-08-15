@@ -6,7 +6,7 @@ require('dotenv').config();
 
 models.sequelize.sync().then(function() {
   // Run the server
-  app.listen(process.env.PORT, (err, address) => {
+  app.listen(process.env.PORT, '0.0.0.0', (err, address) => {
     if (err) {
       logger.error(err);
       process.exit(1);

@@ -11,7 +11,7 @@ This is a straightforward boilerplate application for building REST APIs in Node
 - [Newman](https://github.com/postmanlabs/newman): as a manager for the postman collections. It allows you to effortlessly run and test a Postman collection directly from the command-line.
 - [Sequelize](https://github.com/sequelize/sequelize): Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 - [Jest](https://jestjs.io/docs/en/getting-started) + [supertest](https://github.com/visionmedia/supertest): Powerfull combination to testing node.js HTTP servers.
-- [ESLint](http://eslint.org): JavaScript code linting is done using [ESLint](http://eslint.org) a pluggable linter tool for identifying and reporting on patterns in JavaScript. Uses ESLint with [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb), which tries to follow the Airbnb JavaScript style guide.                                                                                                |
+- [ESLint](http://eslint.org): a pluggable linter tool for identifying and reporting on patterns in JavaScript, combined with [Prettier](https://github.com/prettier/prettier) so with can get the benefits of `prettier's` superior formatting capabilities, but also benefit from the configuration capabilities of `eslint`.javascript/tree/master/packages/eslint-config-airbnb), which tries to follow the Airbnb JavaScript style guide.                                                                                                |
 - [npm](https://www.npmjs.com/): Uses npm as package manager.
 - [http-status](https://www.npmjs.com/package/http-status): to set http status code. It is recommended to use `httpStatus.INTERNAL_SERVER_ERROR` instead of directly using `500` when setting status code.
 
@@ -33,7 +33,7 @@ npm install
 Start server:
 ```sh
 # Start server
-node app.js
+node index.js
 ```
 Open your browser at http://localhost:3000
 
@@ -42,10 +42,35 @@ Open your browser at http://localhost:3000
 # Run tests
 npm test
 
+```
+```sh
 # Run test along with code coverage
 npm run coverage
 
+> fastify-rest-api@1.0.0 coverage /home/vstevam/Desktop/ConsenSys/API/fastify-rest-api
+> jest --forceExit --detectOpenHandles --collectCoverage
+
+ PASS  tests/routes/healthcheck.test.js
+ PASS  tests/routes/root.test.js
+-------------------|----------|----------|----------|----------|-------------------|
+File               |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line    |
+-------------------|----------|----------|----------|----------|-------------------|
+All files          |      100 |      100 |      100 |      100 |                   |
+ codefi-api        |      100 |      100 |      100 |      100 |                   |
+  app.js           |      100 |      100 |      100 |      100 |                   |
+ codefi-api/routes |      100 |      100 |      100 |      100 |                   |
+  healthcheck.js   |      100 |      100 |      100 |      100 |                   |
+-------------------|----------|----------|----------|----------|-------------------|
+
+Test Suites: 2 passed, 2 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        1.044s
+Ran all test suites.
+
+
 ```
+
 `npm run coverage` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
 
 ### Newman testing Postman Collections:
@@ -97,6 +122,16 @@ Boilerplate Rest API
 ├───────────────────────────────────────────────────────────────┤
 │ average response time: 23ms [min: 3ms, max: 44ms, s.d.: 20ms] │
 └───────────────────────────────────────────────────────────────┘
+```
+### Lint:
+
+```sh
+# Lint the code
+npm run lint
+
+# Run Lint check
+npm run eslint-check
+
 ```
 
 ## Docker
