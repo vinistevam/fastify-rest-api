@@ -1,7 +1,7 @@
 {
   "name": "fastify-rest-api",
   "version": "1.0.0",
-  "description": "Boilerplate project for an REST API with Fastify Framework ",
+  "description": "Boilerplate project for a REST API with Fastify Framework ",
   "main": "app.js",
   "scripts": {
     "test": "jest --forceExit --detectOpenHandles ",
@@ -21,8 +21,8 @@
     "jest",
     "javascript"
   ],
-  "author": "Vinicius Stevam",
-  "license": "ISC",
+  "author": "",
+  "license": "",
   "bugs": {
     "url": "https://github.com/vinistevam/fastify-rest-api/issues"
   },

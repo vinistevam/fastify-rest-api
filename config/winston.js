@@ -1,35 +1,25 @@
-const winston = require('winston');
+const newman = require('newman');
+const fs = require('fs');
+const appRoot = require('app-root-path');
 
-// Define the custom settings for each transport (file, console)
-const options = {
-  file: {
-    level: 'info',
-    filename: './logs/logs.log',
-    handleExceptions: true,
-    json: true,
-    maxsize: 5242880, // 5MB
-    maxFiles: 5,
-    colorize: false
-  },
-  console: {
-    level: 'info',
-    handleExceptions: true,
-    json: false,
-    colorize: true
+const env = fs.readFileSync(`${appRoot}/postman/environment/local.json`);
+
+fs.readdir(`${appRoot}/postman/collections`, async function(err, files) {
+  if (err) {
+    throw new Error(`Error while reading collections folder: ${err}`);
   }
-};
 
-// Define a custom format of the log messages
-const logFormat = winston.format.combine(
-  winston.format.timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
-  winston.format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
-);
+  files.forEach(function(file) {
+    const options = {
+      collection: require(`${appRoot}/postman/collections/${file}`), // FIXME - add from Postman URL
+      environment: JSON.parse(env), // FIXME - add from Postman URL
+      reporters: 'cli'
+    };
 
-const logger = winston.createLogger({
-  transports: [
-    new winston.transports.Console({ format: logFormat, options: options.console })
-    // new winston.transports.File(options.file), // Uncomment to have file logs enabled
-  ]
-});
-
-module.exports = logger;
+    newman.run(options, err => {
+      if (err) {
+        throw new Error(`Config newman: ${err.message}`);
+      }
+    }); //end of newman run
+  }); //end of for loop for files
+}); //end of reading files from collections folder
