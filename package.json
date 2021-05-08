@@ -48,7 +48,7 @@
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2",
-    "handlebars": ">=4.3.0",
+    "handlebars": ">=4.7.7",
     "csv-parse": ">=4.4.6"
   }
 }
